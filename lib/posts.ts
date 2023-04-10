@@ -1,4 +1,5 @@
 import { BlogPost } from "@/pages/api/models/BlogPost";
+import { ObjectId } from "bson";
 
 export const getAllPostIds = async () => {
   let dev = process.env.NODE_ENV !== "production";
@@ -18,7 +19,7 @@ export const getAllPostIds = async () => {
   });
 };
 
-export const getPostData = async (id) => {
+export const getPostData = async (id: ObjectId) => {
   let dev = process.env.NODE_ENV !== "production";
   let { DEV_URL, PROD_URL } = process.env;
   const response: Response = await fetch(
