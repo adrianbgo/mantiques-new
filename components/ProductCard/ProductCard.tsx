@@ -23,6 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <h3 className={styles.title}>{product.name}</h3>
         <p className={styles.description}>{product.description}</p>
         <div className={styles.price}>${product.price.toFixed(2)}</div>
+        <button className={styles.buyNow}>Buy Now</button>
       </div>
     </div>
   );

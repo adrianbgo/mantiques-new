@@ -5,8 +5,14 @@ import styles from "../styles/Home.module.css";
 import Layout from "@/components/Layout/Layout";
 import FeaturedProducts from "@/components/FeaturedProducts/FeaturedProducts";
 import { Product } from "./api/models/Product";
+import { getAllProducts } from "@/lib/products";
+import { GetStaticProps } from "next";
 
-export default function Home() {
+interface Props {
+  products: Product[];
+}
+
+export default function Home({ products }: Props) {
   return (
     <Layout>
       <Head>
@@ -32,9 +38,17 @@ export default function Home() {
             <p className={styles["subtitle-description"]}>
               Check out some of our favorite finds!
             </p>
+            <FeaturedProducts products={products} />
           </div>
         </main>
       </div>
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const products = await getAllProducts();
+  return {
+    props: { products },
+  };
+};

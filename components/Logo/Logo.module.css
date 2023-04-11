@@ -1,0 +1,9 @@
+.logoText {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.logoText:hover {
+  text-decoration: none;
+}

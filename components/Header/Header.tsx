@@ -1,14 +1,13 @@
 import Link from "next/link";
+import Logo from "../Logo/Logo";
 import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
   return (
     <header className={styles.header}>
+      <Logo text="Mantiques" />
       <nav className={styles.nav}>
         <ul className={styles.navList}>
-          <li>
-            <Link href="/">Mantiques</Link>
-          </li>
           <li>
             <Link href="/products">Products</Link>
           </li>
