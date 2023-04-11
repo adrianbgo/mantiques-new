@@ -7,6 +7,7 @@ export interface Product {
   description: string;
   image: string;
   price: number;
+  published: boolean;
 }
 
 const productSchema = new Schema({
@@ -24,6 +25,10 @@ const productSchema = new Schema({
   },
   price: {
     type: Number,
+    required: true,
+  },
+  published: {
+    type: Boolean,
     required: true,
   },
 });
