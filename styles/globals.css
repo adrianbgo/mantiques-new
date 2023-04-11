@@ -1,13 +1,15 @@
 :root {
   /* Define custom CSS variables here */
   --primary-color: #6750a4;
+  --secondary-color: violet;
   --bg-color: #fffbfe;
   --text-color: #444;
+  --grey: #888;
 }
 
 /* Apply the custom CSS variables */
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: #333;
   font-family: Arial, sans-serif;
   font-size: 16px;

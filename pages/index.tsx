@@ -3,6 +3,8 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import styles from "../styles/Home.module.css";
 import Layout from "@/components/Layout/Layout";
+import FeaturedProducts from "@/components/FeaturedProducts/FeaturedProducts";
+import { Product } from "./api/models/Product";
 
 export default function Home() {
   return (
@@ -30,8 +32,6 @@ export default function Home() {
             <p className={styles["subtitle-description"]}>
               Check out some of our favorite finds!
             </p>
-
-            {/* insert featured products here */}
           </div>
         </main>
       </div>

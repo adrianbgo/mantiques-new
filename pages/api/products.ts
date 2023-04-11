@@ -7,6 +7,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     case "GET": {
       return getProducts(req, res);
     }
+    case "POST": {
+      return addProduct(req, res);
+    }
   }
 };
 
@@ -22,6 +25,23 @@ const getProducts = async (req: NextApiRequest, res: NextApiResponse<any>) => {
 
     return res.json({
       message: JSON.parse(JSON.stringify(products)),
+      success: true,
+    });
+  } catch (e: any) {
+    return res.json({
+      message: e.message,
+      success: false,
+    });
+  }
+};
+
+const addProduct = async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    let { db } = await connectToDatabase();
+    await db.collection("products").insertOne(JSON.parse(req.body));
+
+    return res.json({
+      message: "Product added successfully",
       success: true,
     });
   } catch (e: any) {

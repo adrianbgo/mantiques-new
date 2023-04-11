@@ -8,6 +8,7 @@ export interface Product {
   image: string;
   price: number;
   published: boolean;
+  featured: boolean;
 }
 
 const productSchema = new Schema({
