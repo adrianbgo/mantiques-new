@@ -50,7 +50,7 @@ const testimonials = [
   },
 ];
 
-export default function Home({ products }: Props) {
+export default function Home() {
   const [underConstruction, setUnderConstruction] = useState(true);
   return (
     <>
@@ -75,13 +75,13 @@ export default function Home({ products }: Props) {
             <main className={styles.main}>
               <ImageGallery images={images} interval={5000} />
               <Testimonials testimonials={testimonials} />
-              <div className={`${styles.grid} ${styles["featured-products"]}`}>
+              {/* <div className={`${styles.grid} ${styles["featured-products"]}`}>
                 <h2 className={styles.subtitle}>Featured Products</h2>
                 <p className={styles["subtitle-description"]}>
                   Check out some of our favorite finds!
                 </p>
                 <FeaturedProducts products={products} />
-              </div>
+              </div> */}
             </main>
             <AboutUs />
           </div>
@@ -90,10 +90,3 @@ export default function Home({ products }: Props) {
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const products = await getAllProducts();
-  return {
-    props: { products },
-  };
-};

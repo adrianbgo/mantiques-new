@@ -7,6 +7,6 @@ export const getAllProducts = async () => {
     `${dev ? DEV_URL : PROD_URL}/api/products`
   );
   let data = await response.json();
-  let products: Array<Product> = JSON.parse(JSON.stringify(data.message));
+  let products: Array<Product> = [];
   return products;
 };
