@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useRouter } from "next/router";
 
 const name = "Mantiques";
 export const siteTitle = "Mantiques - Vintage Finds and Treasures";
@@ -12,6 +14,14 @@ interface ILayout {
 }
 
 const Layout: React.FC<ILayout> = ({ children, home, title }: ILayout) => {
+  const router = useRouter();
+  const [underConstruction, setUnderConstruction] = useState(true);
+
+  useEffect(() => {
+    if (underConstruction) {
+      router.push("/");
+    }
+  }, [underConstruction, router]);
   return (
     <div>
       <Head>

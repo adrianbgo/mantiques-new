@@ -3,6 +3,7 @@ import { getAllProducts } from "../../lib/products";
 import Layout from "../../components/Layout/Layout";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Product } from "../api/models/Product";
+import styles from "../../styles/Products.module.css";
 
 interface Props {
   products: Product[];
@@ -11,8 +12,8 @@ interface Props {
 const Products: React.FC<Props> = ({ products }) => {
   return (
     <Layout title="Mantiques - Products">
-      <h1>Products</h1>
-      <div className="grid">
+      <h1 className={styles.header}>Products</h1>
+      <div className={styles.grid}>
         {products.map((product) => (
           <ProductCard key={product._id.toString()} product={product} />
         ))}

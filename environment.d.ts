@@ -5,6 +5,7 @@ declare global {
       MONGODB_DB: string;
       DEV_URL: string;
       PROD_URL: string;
+      STRIPE_SECRET_KEY: string;
     }
   }
 }

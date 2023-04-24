@@ -1,0 +1,39 @@
+.heroSection {
+  background-image: url("../../public/images/hero-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  color: #fff;
+  filter: grayscale(1) contrast(9)
+    drop-shadow(0.05em 0.05em var(--primary-color));
+}
+
+.heroDescription {
+  color: white;
+  max-width: 50%;
+  font-size: 1.5rem;
+}
+
+.heroButton {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
+.heroButton:hover {
+  transition: 0.2s ease-in;
+  text-decoration: none;
+  filter: brightness(60%);
+}

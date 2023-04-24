@@ -1,8 +1,16 @@
 import Link from "next/link";
 import Logo from "../Logo/Logo";
 import styles from "./Header.module.css";
+import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "@/context/CartContext";
+
+type ICartContext = {
+  totalItems: number;
+};
 
 const Header: React.FC = () => {
+  const { totalItems } = useContext<ICartContext>(CartContext);
   return (
     <header className={styles.header}>
       <Logo text="Mantiques" />
@@ -12,9 +20,6 @@ const Header: React.FC = () => {
             <Link href="/products">Products</Link>
           </li>
           <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
             <Link href="/about">About Us</Link>
           </li>
           <li>
@@ -22,6 +27,10 @@ const Header: React.FC = () => {
           </li>
         </ul>
       </nav>
+      <Link href="/cart" className={styles.cart}>
+        <FaShoppingCart />
+        <span className={styles.cartCount}>{totalItems}</span>
+      </Link>
     </header>
   );
 };

@@ -33,7 +33,7 @@
   line-height: 1.2;
   text-align: center;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   color: var(--primary-color);
 }
 

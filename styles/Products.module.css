@@ -1,0 +1,11 @@
+.grid {
+  margin: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.header {
+  font-size: 3rem;
+  text-align: center;
+}
