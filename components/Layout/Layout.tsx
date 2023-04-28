@@ -15,7 +15,7 @@ interface ILayout {
 
 const Layout: React.FC<ILayout> = ({ children, home, title }: ILayout) => {
   const router = useRouter();
-  const [underConstruction, setUnderConstruction] = useState(true);
+  const [underConstruction, setUnderConstruction] = useState(false);
 
   useEffect(() => {
     if (underConstruction) {

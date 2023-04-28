@@ -17,7 +17,7 @@ interface Props {
 }
 
 const heroButton = {
-  link: "/",
+  link: "/contact",
   text: "Contact",
 };
 
@@ -31,27 +31,8 @@ const images = [
     alt: "Clarinet Lamp",
   },
 ];
-
-const testimonials = [
-  {
-    name: "Pelican Steve",
-    quote:
-      "Mantiques did an amazing job at my home and I could not have asked for better results. Their craftsmanship is one of a kind.",
-  },
-  {
-    name: "Max Conversion",
-    quote:
-      "Mantiques made it easy for me to find phenomenal art without having to compromise on price or beauty. Truly an excellent business.",
-  },
-  {
-    name: "Eleanor Faint",
-    quote:
-      "Mantiques is a one of a kind business that really puts a premium on the needs of their clients. I highly recommend it to everyone I meet.",
-  },
-];
-
 export default function Home() {
-  const [underConstruction, setUnderConstruction] = useState(true);
+  const [underConstruction, setUnderConstruction] = useState(false);
   return (
     <>
       {underConstruction ? (
@@ -74,7 +55,6 @@ export default function Home() {
             />
             <main className={styles.main}>
               <ImageGallery images={images} interval={5000} />
-              <Testimonials testimonials={testimonials} />
               {/* <div className={`${styles.grid} ${styles["featured-products"]}`}>
                 <h2 className={styles.subtitle}>Featured Products</h2>
                 <p className={styles["subtitle-description"]}>

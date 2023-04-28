@@ -1,0 +1,97 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+
+.left {
+  width: 65%;
+  position: relative;
+}
+
+.right {
+  width: 35%;
+  margin-top: 60px;
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.description {
+  border-bottom: 1px solid #e1e8ee;
+}
+
+.description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484d;
+  letter-spacing: -2px;
+}
+
+.description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939e;
+  line-height: 24px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474d;
+  margin-right: 20px;
+}
+
+.price span::before {
+  content: "$";
+}
+
+.buyNow {
+  display: inline-block;
+  background-color: #7dc855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.buyNow:hover {
+  background-color: #64af3d;
+}
+
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 535px) {
+  .left img {
+    width: 220px;
+    height: 220px;
+  }
+}
