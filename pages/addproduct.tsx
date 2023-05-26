@@ -8,7 +8,7 @@ const AddProduct = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState<any>();
   const [featured, setFeatured] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -42,7 +42,7 @@ const AddProduct = () => {
       setName("");
       setDescription("");
       setPrice("");
-      setImage("");
+      setImage(null);
 
       return setMessage(data.message);
     } else {
@@ -89,7 +89,7 @@ const AddProduct = () => {
           <label className={styles["form-label"]}>
             Image:
             <input
-              type="text"
+              type="file"
               value={image}
               onChange={(event) => setImage(event.target.value)}
               required

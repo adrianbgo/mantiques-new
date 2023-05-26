@@ -5,7 +5,7 @@ export interface Product {
   _id: ObjectId;
   name: string;
   description: string;
-  image: string;
+  image: any;
   price: number;
   published: boolean;
   featured: boolean;
